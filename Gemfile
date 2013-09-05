@@ -1,0 +1,7 @@
+require 'sinatra'
+require 'mongodb'
+require 'httparty'
+require 'nokogiri'
+require 'trollop'
+require 'rspec'
+require 'rack-test'
