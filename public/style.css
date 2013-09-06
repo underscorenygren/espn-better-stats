@@ -1,4 +1,22 @@
-table {
+#data_table {
 	font-family: Helvetica;
 	font-size: 12px;
+	width: 600px;
+}
+
+.dataTables_filter {
+	display: none;
+}
+
+
+thead span {
+	display: block;
+}
+
+.autocomplete {
+	width: 50px;
+}
+
+#name.autocomplete {
+	width: 150px;
 }

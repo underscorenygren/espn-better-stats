@@ -2,26 +2,63 @@
 <script type="text/javascript" src="scripts.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.js"></script>
+<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
 <link rel="stylesheet" type="text/css" href="reset.css"></link>
 <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css" />
 <link rel="stylesheet" type="text/css" href="style.css">
 <body>
 
-<select id="ownership">
-<option>All</option>
-<option>Free</option>
-<option>Owned</option>
-</select>
-<table id="data_table" class="tablesorter">
-	<thead>
-		<th>Name</th>
-		<th>Team</th>
-		<th>Pos</th>
-		<th>Owned By</th>
-	</thead>
-	<tbody id="table_body">
-	</tbody>
-</table>
+<div id="app" style="display:none;">
+	<div id="graph">
+
+	</div>
+
+	<div id="controls">
+		<div id="ownership">
+			<input type="radio" group="ownership" class="table_update" value="All" >All</input>
+			<input type="radio" group="ownership" class="table_update" value="Free">Free</input>
+			<input type="radio" group="ownership" class="table_update" value="Owned">Owned</input>
+		</div>
+
+		<div id="weeks">
+			<input type="radio" group="weeks" value="1">1</input>
+			<input type="radio" group="weeks" value="2">2</input>
+			<input type="radio" group="weeks" value="3">3</input>
+			<input type="radio" group="weeks" value="4">4</input>
+			<input type="radio" group="weeks" value="5">5</input>
+			<input type="radio" group="weeks" value="6">6</input>
+			<input type="radio" group="weeks" value="7">7</input>
+			<input type="radio" group="weeks" value="8">8</input>
+			<input type="radio" group="weeks" value="9">9</input>
+			<input type="radio" group="weeks" value="10">10</input>
+			<input type="radio" group="weeks" value="11">11</input>
+		</div>
+	</div>
+
+	<div id="players">
+		<table id="data_table" class="tablesorter">
+			<thead>
+				<th class="name"><div><span>Name</span><input type="text" class="autocomplete" id="name" /></th>
+				<th class="team"><div><span>Team</span><input type="text" class="autocomplete" id="team" /></th>
+				<th class="pos"><div><span>Pos</span><input type="text" class="autocomplete" id="pos" /></th>
+				<th class="owned"><div><span>Owner</span><input type="text" class="autocomplete" id="owner" /></th>
+				<th>Res Last</th>
+				<th>Proj Last</th>
+				<th>Res Total</th>
+				<th>Proj +/- Pts</th>
+				<th>Proj +/- %</th>
+			</thead>
+			<tbody id="table_body">
+			</tbody>
+		</table>
+	</div>
+
+	<div id="news">
+
+	</div>
+
+</div>
 
 </body>
 
