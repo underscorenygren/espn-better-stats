@@ -165,12 +165,19 @@ module StatTracker
 			updated = 0
 			owner = 0
 
-			(0..600).step(50) do |startIndex|
+			(0..1050).step(50) do |startIndex|
 				week, rows = parse_agency_page(startIndex)
 				rows.each do |row|
 					changed = false
 					name, team = html_to_info(row)
 					player = db.from_db(name, team)
+          if not player
+            player = html_to_player(row)
+            db.save_player(player)
+            puts "Saved new player #{player}"
+            player = db.from_db(name, team)
+          end
+
 					existing_stats = player.get_stats(week)
 					current_owner = html_to_owner(row)
 					stat = html_to_stats row

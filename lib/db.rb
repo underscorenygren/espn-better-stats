@@ -54,7 +54,7 @@ module StatTracker
 
 		def from_db(player_name, team)
 			db_player = find_player(player_name, team)
-			throw :no_player if db_player.nil?
+      return nil if not db_player
 			StatTracker::Data::Player.new(db_player)
 		end
 
